@@ -3,31 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, maximum-scale=1">
-<title>Insert title here</title>
-</head>
+<<jsp:include page="../include/header.jsp" />
 <style>
 	.errors{
 		color : red;
 		font-weight: bold;
 	}
 </style>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 <body>
 	<jsp:include page="../include/nav.jsp" />
 	<!-- 게시글 쓰기 -->
-	<!-- 글쓰고 확인 및 취소 버튼 필요 -->
-	<!-- 확인 url은 동일하게 /board/add로 요청 -->
-	<!-- 필요 파라미터 (파라미터명) : 게시글 제목 (title), 작성자 (name), 게시글 (content) -->
-	
 	
 	<form:form action="/board/add" method="post" modelAttribute="boardVo">
 		<table class="board-view table table-bordered table-hover">
