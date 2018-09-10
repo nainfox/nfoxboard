@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+<!-- //	id	int(11)	NO	PRI	NULL	auto_increment
+//	title	varchar(60)	NO		NULL	
+//	name	varchar(30)	NO		NULL	
+//	regdate	datetime	NO		NULL	
+//	hit	int(11)	NO		NULL	
+//	content	blob	NO		NULL	 -->
+	
+	<select id="selectList" resultType="boardVo">
+		select * from board order by id desc
+	</select>
+	
+	<insert id="insertBoard" parameterType="boardVo">
+		insert into board values(null, #{title}, #{name}, now(), 0, #{content})
+	</insert>
+	
+	<select id="selectOne" parameterType="int" resultType="boardVo">
+		select id, title, name, regdate, hit, CONVERT(content USING utf8) as content from board where id = #{value}
+	</select>
+	
+	<select id="totalCount" parameterType="Map" resultType="int">
+		select count(*) from board where title like concat('%', #{keyword}, '%')
+	</select>
+	
+	<select id="searchPage" parameterType="Map" resultType="boardVo">
+ 		select * from (select @rownum:=@rownum+1 as rnum, b.id, b.title, b.name, b.regdate, b.hit,
+		 convert(b.content using utf8) from (select * from board as s where s.title like concat('%', #{keyword}, '%')) b, (select @rownum:=0) TMP) c 
+		 where c.rnum between #{start} and #{end}
+ 	</select>
+	
+</mapper>
+
+
