@@ -71,10 +71,11 @@
 	        
 	        var repaging = function(event, num){
 				var text = $('#keyword').val();
+				var $option = $('#optionSelect').val();
 			    $.ajax({
 			    	url : "/board/boardPaging",
 			    	type : "post",
-			    	data : {page : num, keyword : text},
+			    	data : {page : num, keyword : text, option : $option},
 			    	success : function(data){
 			    		//총 페이지의 수
 			    		//현재 페이지부터의 한페이지에 출력할 로우량만큼의 데이터리스트
@@ -96,6 +97,11 @@
 	    </script>
 	<div class="searchList">
 		<form class="form-group text-center">
+			<select name="option" class="form-control" id="optionSelect">
+				<option value="all" selected="selected">전체</option>
+				<option value="title">제목</option>
+				<option value="name">작성자</option>
+			</select>
 			<input type="text" id="keyword" name="keyword"
 				class="form-control col-sm-4" placeholder="검색어를 입력하세요." />
 			<div class="col-sm-2">

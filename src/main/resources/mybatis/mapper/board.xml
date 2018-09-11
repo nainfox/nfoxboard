@@ -28,7 +28,13 @@
 	
 	<select id="searchPage" parameterType="Map" resultType="boardVo">
  		select * from (select @rownum:=@rownum+1 as rnum, b.id, b.title, b.name, b.regdate, b.hit,
-		 convert(b.content using utf8) from (select * from board as s where s.title like concat('%', #{keyword}, '%')) b, (select @rownum:=0) TMP) c 
+		 convert(b.content using utf8) from (select * from board as s where 
+		 <choose>
+		 	<when test="option == 'all'">s.title or s.name like concat('%', #{keyword}, '%'))</when>
+		 	<when test="option == 'name'">s.name like concat('%', #{keyword}, '%'))</when>
+		 	<otherwise>s.title like concat('%', #{keyword}, '%'))</otherwise>
+		 </choose>
+		 b, (select @rownum:=0) TMP) c 
 		 where c.rnum between #{start} and #{end}
  	</select>
 	

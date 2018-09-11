@@ -34,6 +34,7 @@ public class BoardController {
 		Map<String, Object> boardMap = new HashMap<>();
 		boardMap.put("keyword", "");
 		boardMap.put("page", 1);
+		boardMap.put("option", "all");
 		Map<String, Object> resultMap = boardService.boardSearchPageList(boardMap);
 		model.addAttribute("boardMap", resultMap);
 		return "/board/list.jsp";
@@ -64,10 +65,13 @@ public class BoardController {
 	
 	@PostMapping(value="/board/boardPaging")
 	@ResponseBody
-	public Map<String, Object> boardPaging(@RequestParam String keyword, @RequestParam int page){
+	public Map<String, Object> boardPaging(@RequestParam String keyword, @RequestParam int page,
+			@RequestParam String option){
 		Map<String, Object> searchMap = new HashMap<>();
 		searchMap.put("keyword", keyword);
 		searchMap.put("page", page);
+		searchMap.put("option", option);
+		System.out.println(option);
 		Map<String, Object> resultMap = boardService.boardSearchPageList(searchMap);
 		return resultMap;
 	}
