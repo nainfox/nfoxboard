@@ -1,0 +1,19 @@
+
+h1{text-align:center}
+#listTable{width:90%;margin:0 auto}
+#listTable thead{width:100%;border-top:2px solid #333;border-bottom:2px solid #333}
+#listTable thead th{padding:15px 0;font-size:14px;text-align:center}
+#listTable tr{width:100%;border-bottom:1px solid #999}
+#listTable tr:last-child{border-bottom:2px solid #333}
+#listTable tr td{padding:10px 0;text-align:center}
+#listTable tr td:nth-child(2){text-align:left}
+#listTable tr td a{text-decoration:none}
+
+#page-selection{margin:0 39%}
+
+.searchList{width:60%;margin:0 auto;}
+.searchList .form-group{width:100%;overflow:hidden}
+.searchList .form-group #optionSelect{float:left;width:20%;}
+.searchList .form-group #keyword{width:60%}
+.searchList .form-group div{width:20%;margin:0}
+

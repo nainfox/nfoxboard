@@ -1,0 +1,10 @@
+
+body{width:100%}
+.board-view{width:80%;margin:7% auto 0;border-top:2px solid #333;border-bottom:2px solid #333}
+.board-view tr{width:100%}
+.board-view tr th{width:20%;font-size:18px;font-weight:bold}
+.board-view tr td{width:80%;font-size:14px}
+.board-view tr td img{width:80%;}
+
+.buttons{width:80%;margin:0 auto 5%}
+.buttons .btn{}

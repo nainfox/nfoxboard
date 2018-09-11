@@ -1,0 +1,12 @@
+applications:
+- name: nfoxboard
+  buildpacks:
+  - java_buildpack
+  disk_quota: 1G
+  instances: 1
+  memory: 2048M
+  routes:
+  - route: nfoxboard.paas-ta.co.kr
+  services:
+  - nfoxboardservice
+  stack: cflinuxfs2

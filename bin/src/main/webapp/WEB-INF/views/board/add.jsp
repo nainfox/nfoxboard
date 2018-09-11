@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<jsp:include page="../include/header.jsp" />
+<<jsp:include page="../include/header.jsp" />
 <style>
 	.errors{
 		color : red;
@@ -11,16 +11,14 @@
 	}
 </style>
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
-<link rel="stylesheet" href="/resources/css/common.css">
-<link rel="stylesheet" href="/resources/css/add.css">
 <body>
 	<jsp:include page="../include/nav.jsp" />
 	<!-- 게시글 쓰기 -->
 	
 	<form:form action="/board/add" method="post" modelAttribute="boardVo">
-		<table class="board-view table table-bordered ">
+		<table class="board-view table table-bordered table-hover">
 			<tr>
-				<th>제목</th>
+				<th width="30%">제목</th>
 				<td>
 					<form:input type="text" path="title" class="form-control"/>
 					<form:errors class="errors" path="title"/>				

@@ -4,8 +4,6 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="../include/header.jsp" />
 <script type="text/javascript" src="/resources/js/jquery.bootpag.min.js"></script>
-<link rel="stylesheet" href="/resources/css/common.css">
-<link rel="stylesheet" href="/resources/css/list.css">
 <body>
 	<jsp:include page="../include/nav.jsp" />
 	<!-- 게시판 -->

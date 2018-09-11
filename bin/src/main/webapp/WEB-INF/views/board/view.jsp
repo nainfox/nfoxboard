@@ -4,16 +4,14 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <jsp:include page="../include/header.jsp" />
-<link rel="stylesheet" href="/resources/css/common.css">
-<link rel="stylesheet" href="/resources/css/view.css">
 <body>
 	<jsp:include page="../include/nav.jsp" />
 	
 	<!-- 게시글 보기 -->
 	
-	<table class="board-view table table-bordered">
+	<table class="board-view table table-bordered table-hover">
 		<tr>
-			<th>제목</th>
+			<th width="30%">제목</th>
 			<td>${board.title }</td>
 		</tr>
 		<tr>

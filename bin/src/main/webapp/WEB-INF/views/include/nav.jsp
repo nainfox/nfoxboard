@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <link rel="stylesheet" href="/resources/css/common.css">
     <!-- 상단 네비게이션바 -->
 	<nav class="navbar navbar-inverse">
   		<div class="container-fluid">
