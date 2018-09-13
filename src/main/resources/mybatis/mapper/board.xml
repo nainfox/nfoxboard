@@ -35,7 +35,7 @@
 		 	<otherwise>s.title like concat('%', #{keyword}, '%'))</otherwise>
 		 </choose>
 		 b, (select @rownum:=0) TMP) c 
-		 where c.rnum between #{start} and #{end}
+		 where c.rnum between #{start} and #{end} order by regdate desc
  	</select>
 	
 </mapper>
