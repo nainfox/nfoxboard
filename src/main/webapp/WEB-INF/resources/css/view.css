@@ -6,5 +6,5 @@ body{width:100%}
 .board-view tr td{width:80%;font-size:14px}
 .board-view tr td img{width:80%;}
 
-.buttons{width:80%;margin:0 auto 5%}
-.buttons .btn{}
+.buttons{width:100%;text-align:center;margin:2% auto}
+.buttons .btn_list{background-color:#5bc0de;color:#fff}

@@ -4,6 +4,9 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="../include/header.jsp" />
 <script type="text/javascript" src="/resources/js/jquery.bootpag.min.js"></script>
+<script type="text/javascript" src="/resources/js/list.js"></script>
+<script type="text/javascript" src="/resources/js/flowtype.js"></script>
+<script type="text/javascript" src="/resources/js/nav.js"></script>
 <link rel="stylesheet" href="/resources/css/common.css">
 <link rel="stylesheet" href="/resources/css/list.css">
 <body>
@@ -29,10 +32,10 @@
 		</tr>
 		</c:forEach>
 	</table>
-	<div id="page-selection"></div>
+	<div id="page_selection"></div>
 	    <script>
 	        // init bootpag
-	        var myboot = $('#page-selection').bootpag({
+	        var myboot = $('#page_selection').bootpag({
 			    total: ${boardMap.totalPage},
 			    page: 1,
 			    maxVisible: 5,
@@ -105,14 +108,16 @@
 				<option value="name">작성자</option>
 			</select>
 			<input type="text" id="keyword" name="keyword"
-				class="form-control col-sm-4" placeholder="검색어를 입력하세요." />
-			<div class="col-sm-2">
+				class="form-control" placeholder="검색어를 입력하세요." />
+			<div class="btn_search">
 				<button type="button" onclick='repaging(event, 1);'
-					class="btn btn-success">검색</button>
+					class="btn btn_search2">검색</button>
 			</div>
 		</form>
 	</div>
-	<button type="button" class="btn btn-primary text-right" onclick="location.href='/board/add'">글쓰기</button>
-
+	<button type="button" class="btn btn_write" onclick="location.href='/board/add'">글쓰기</button>
+    <script type="text/javascript">
+      $('body').flowtype();
+  	</script>
 </body>
 </html>

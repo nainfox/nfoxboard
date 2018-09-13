@@ -1,19 +1,29 @@
+body{width:100%;position:relative}
 
 h1{text-align:center}
-#listTable{width:90%;margin:0 auto}
+#listTable{width:90%;margin:3% auto 0}
 #listTable thead{width:100%;border-top:2px solid #333;border-bottom:2px solid #333}
 #listTable thead th{padding:15px 0;font-size:14px;text-align:center}
 #listTable tr{width:100%;border-bottom:1px solid #999}
 #listTable tr:last-child{border-bottom:2px solid #333}
 #listTable tr td{padding:10px 0;text-align:center}
 #listTable tr td:nth-child(2){text-align:left}
-#listTable tr td a{text-decoration:none}
+#listTable tr td:nth-child(2) a{color:#333;font-weight:bold}
 
-#page-selection{margin:0 39%}
 
-.searchList{width:60%;margin:0 auto;}
+#page_selection{width:100%;text-align:center}
+.pagination{display:inline-block}
+.pagination li a{color:#666}
+.pagination li.active{background-color:#5bc0de;}
+.pagination .active a{background-color:#5bc0de;border-color:#5bc0de}
+.pagination .active a:hover{background-color:#5bc0de;border-color:#5bc0de}
+
+.searchList{width:60%;margin:0 auto 3%}
 .searchList .form-group{width:100%;overflow:hidden}
 .searchList .form-group #optionSelect{float:left;width:20%;}
-.searchList .form-group #keyword{width:60%}
-.searchList .form-group div{width:20%;margin:0}
+.searchList .form-group #keyword{float:left;width:60%}
+.searchList .form-group .btn_search{float:right;width:20%;margin:0}
+.searchList .form-group .btn_search .btn_search2{width:100%;background-color:#bbbbbb;color:#fff}
+
+.btn_write{position:absolute;bottom:10%;left:5%;background-color:#5bc0de;color:#fff}
 

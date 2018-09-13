@@ -4,6 +4,9 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <jsp:include page="../include/header.jsp" />
+<script type="text/javascript" src="/resources/js/add.js"></script>
+<script type="text/javascript" src="/resources/js/flowtype.js"></script>
+<script type="text/javascript" src="/resources/js/nav.js"></script>
 <style>
 	.errors{
 		color : red;
@@ -42,8 +45,8 @@
 			</tr>
 		</table>
 		<div class="buttons">
-			<button class="btn btn-primary btn-lg">등록</button>
-			<button type="button" onclick="location.href='/board/list/'" class="btn btn-danger btn-lg">취소</button>
+		    <button type="button" onclick="location.href='/board/list/'" class="btn btn_cancle btn-lg">취소</button>
+			<button class="btn btn_add btn-lg">등록</button>
 		</div>
 	</form:form>
 	
@@ -86,6 +89,8 @@
 			});
 		} 
 	</script>
-	
+	<script type="text/javascript">
+      $('body').flowtype();
+  	</script>
 </body>
 </html>

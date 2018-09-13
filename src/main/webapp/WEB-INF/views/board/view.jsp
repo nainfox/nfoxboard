@@ -6,6 +6,9 @@
 <jsp:include page="../include/header.jsp" />
 <link rel="stylesheet" href="/resources/css/common.css">
 <link rel="stylesheet" href="/resources/css/view.css">
+<script type="text/javascript" src="/resources/js/view.js"></script>
+<script type="text/javascript" src="/resources/js/flowtype.js"></script>
+<script type="text/javascript" src="/resources/js/nav.js"></script>
 <body>
 	<jsp:include page="../include/nav.jsp" />
 	
@@ -28,9 +31,11 @@
 		</tr>
 	</table>
 	<div class="buttons">
-		<button type="button" style="text-align: right" class="btn btn-lg btn-info" 
+		<button type="button" style="text-align: right" class="btn btn_list btn-lg" 
 		onclick="location.href='/board/list'">목록</button>
 	</div>
-	
+	<script type="text/javascript">
+      $('body').flowtype();
+  	</script> 
 </body>
 </html>

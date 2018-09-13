@@ -1,9 +1,9 @@
-
 body{width:100%}
 .board-view{width:80%;margin:7% auto 0;border-top:2px solid #666;border-bottom:2px solid #666}
 .board-view tr{width:100%}
 .board-view tr th{width:20%;font-size:18px;font-weight:bold}
 .board-view tr td{width:80%;font-size:14px}
 
-.buttons{width:60%;margin:2% auto}
-.buttons .btn:first-child{margin-left:40%}
+.buttons{width:100%;text-align:center;margin:2% auto}
+.buttons .btn_cancle{background-color:#c7c7c7;color:#fff}
+.buttons .btn_add{background-color:#5bc0de;color:#fff}
