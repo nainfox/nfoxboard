@@ -42,7 +42,6 @@ public class BoardServiceImpl implements BoardService{
 		searchMap.put("end", endRownum);
 		
 		List<BoardVo> boardList = boardDao.boardSearchPage(searchMap);
-		
 		searchMap.put("boardList", boardList);
 		int totalPage = 0;
 		

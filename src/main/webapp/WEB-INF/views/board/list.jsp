@@ -51,11 +51,12 @@
 			    lastClass: 'last',
 			    firstClass: 'first'
 			}).on("page", function(event, num){
-				var text = $('#keyword').val();
+				var $text = $('#keyword').val();
+				var $option = $('#optionSelect').val();
 			    $.ajax({
 			    	url : "/board/boardPaging",
-			    	type : "post",
-			    	data : {page : num, keyword : text},
+			    	type : "POST",
+			    	data : {page : num, keyword : $text, option : $option},
 			    	success : function(data){
 			    		//총 페이지의 수
 			    		//현재 페이지부터의 한페이지에 출력할 로우량만큼의 데이터리스트
@@ -75,12 +76,12 @@
 			})
 	        
 	        var repaging = function(event, num){
-				var text = $('#keyword').val();
+				var $text = $('#keyword').val();
 				var $option = $('#optionSelect').val();
 			    $.ajax({
 			    	url : "/board/boardPaging",
-			    	type : "post",
-			    	data : {page : num, keyword : text, option : $option},
+			    	type : "POST",
+			    	data : {page : num, keyword : $text, option : $option},
 			    	success : function(data){
 			    		//총 페이지의 수
 			    		//현재 페이지부터의 한페이지에 출력할 로우량만큼의 데이터리스트
@@ -92,8 +93,8 @@
 							}
 							for(var i of data.boardList){
 								$('#listTable>tbody').append('<tr><td>'+i.id+'</td><td><a href="/board/view?id='+i.id+'">'+i.title+'</a></td><td>'+i.name+'</td>'+
-									'<td>'+'<f:parseDate var="parsedDate" value="${board.regdate }" pattern="yyyy-MM-dd HH:mm:ss"/>'+
-									'<f:formatDate value="${parsedDate }" pattern="MM/dd HH:mm"/>'+'</td><td>'+i.hit+'</td></tr>');	
+									'<td>'+'<f:parseDate var="parsedDate" value="${board.regdate}" pattern="yyyy-MM-dd HH:mm:ss"/>'+
+									'<f:formatDate value="${parsedDate }" pattern="MM/dd HH:mm"/>'+'</td><td>'+i.hit+'</td></tr>');
 							}
 			    	}
 			    })
@@ -101,19 +102,19 @@
 	        
 	    </script>
 	<div class="searchList">
-		<form class="form-group text-center">
+		<div class="form-group">
 			<select name="option" class="form-control" id="optionSelect">
 				<option value="all" selected="selected">전체</option>
 				<option value="title">제목</option>
 				<option value="name">작성자</option>
 			</select>
-			<input type="text" id="keyword" name="keyword"
+			<input type="text" id="keyword" name="keyword" onkeypress="if(event.keyCode==13) {repaging(event, 1);};"
 				class="form-control" placeholder="검색어를 입력하세요." />
 			<div class="btn_search">
-				<button type="button" onclick='repaging(event, 1);'
+				<button type="button" onclick='repaging(event, 1);' 
 					class="btn btn_search2">검색</button>
 			</div>
-		</form>
+		</div>
 	</div>
 	<button type="button" class="btn btn_write" onclick="location.href='/board/add'">글쓰기</button>
     <script type="text/javascript">

@@ -71,7 +71,6 @@ public class BoardController {
 		searchMap.put("keyword", keyword);
 		searchMap.put("page", page);
 		searchMap.put("option", option);
-		System.out.println(option);
 		Map<String, Object> resultMap = boardService.boardSearchPageList(searchMap);
 		return resultMap;
 	}
